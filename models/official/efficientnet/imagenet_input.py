@@ -24,7 +24,7 @@ import functools
 import os
 import tensorflow as tf
 
-import preprocessing
+import _preprocessing as preprocessing
 
 
 def build_image_serving_input_fn(image_size):
