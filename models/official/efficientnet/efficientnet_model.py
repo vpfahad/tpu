@@ -30,7 +30,7 @@ import six
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-import utils
+import _utils as utils
 
 GlobalParams = collections.namedtuple('GlobalParams', [
     'batch_norm_momentum', 'batch_norm_epsilon', 'dropout_rate', 'data_format',
@@ -39,8 +39,8 @@ GlobalParams = collections.namedtuple('GlobalParams', [
 ])
 GlobalParams.__new__.__defaults__ = (None,) * len(GlobalParams._fields)
 
-# batchnorm = tf.layers.BatchNormalization
-batchnorm = utils.TpuBatchNormalization  # TPU-specific requirement.
+batchnorm = tf.layers.BatchNormalization
+# batchnorm = utils.TpuBatchNormalization  # TPU-specific requirement.
 relu_fn = tf.nn.swish
 
 
