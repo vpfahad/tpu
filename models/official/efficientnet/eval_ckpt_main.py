@@ -32,7 +32,7 @@ import tensorflow as tf
 
 
 import efficientnet_builder
-import preprocessing
+import _preprocessing as preprocessing
 
 
 flags.DEFINE_string('model_name', 'efficientnet-b0', 'Model name to eval.')
